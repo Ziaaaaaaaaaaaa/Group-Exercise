@@ -1,3 +1,15 @@
+// node example
+const http = require('http');
+const port = ++process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, this is a basic Node.js server!');
+}).listen(port, () => {
+  console.log(`Node.js server running on http://localhost:${port}`);
+});
+
+//express example
 const express = require("express");
 const app = express();
 const port = process.env.port || 3000;
@@ -13,4 +25,5 @@ app.post("/admin", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at localhost:${port}`);
-});
+
+
